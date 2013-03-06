@@ -6,7 +6,8 @@ require 'cappie/selenium'
 
 module Cappie
   def self.start(options)
-    Process.new(options[:command], options[:await]).start  
-    Selenium.new(options[:host])
+    host = options.delete(:host)
+    Process.new(options).start  
+    Selenium.new(host)
   end
 end

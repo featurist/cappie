@@ -1,16 +1,17 @@
 require 'rack'
 
-html = '''
+html = """
 <html>
   <body>
     <h1>Example App</h1>
-    <div id="placeholder">Placeholder</div>
+    <div id='placeholder'>Placeholder</div>
     <script>
-      document.getElementById("placeholder").innerHTML = "text created by client-side script";
+      document.getElementById('placeholder').innerHTML = 'text created by client-side script';
     </script>
+    <div>#{ENV.inspect}</div>
   </body>
 </html>
-'''
+"""
 
 run lambda { |env|
   puts 'GET /'

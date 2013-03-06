@@ -2,14 +2,19 @@ require 'childprocess'
 
 module Cappie
   class Process
-    def initialize(command, await)
-      @command = command
-      @await = await
+    def initialize(options)
+      @command = options.delete(:command)
+      @await = options.delete(:await)
+      @working_dir = options.delete(:working_dir)
+      @environment = options.delete(:environment)
     end
     
     def start
       args = @command.split(' ')
       @proc = ChildProcess.build(*args)
+
+      setup_cwd
+      setup_environment
 
       r, w = IO.pipe
 
@@ -42,12 +47,22 @@ module Cappie
       end
       
       at_exit do
-        @proc.stop 0
+        @proc.stop
       end
       
       @proc.io.inherit!
       
       @proc
+    end
+
+    private
+
+    def setup_environment
+      @environment.each { |key, value| @proc.environment[key] = value } unless @environment.nil?
+    end
+
+    def setup_cwd
+      @proc.cwd = @working_dir unless @working_dir.nil?
     end
   end
 end
