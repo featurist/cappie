@@ -7,5 +7,6 @@ Cappie.start(
   command: "bundle exec rackup #{app_path}",
   await: /9292/,
   host: "http://localhost:9292",
-  environment: {foo: 'bar'}
+  environment: {foo: 'bar'},
+  driver: :poltergeist
 )
