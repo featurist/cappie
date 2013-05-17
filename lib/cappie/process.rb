@@ -36,7 +36,7 @@ module Cappie
           end
         end
       rescue EOFError
-        raise "app exited:\n#{all_output}"
+        raise ProcessExitedError.new "The app process exited\nSTDOUT:\n#{all_output}"
       end
       
       Thread.new do
@@ -65,4 +65,6 @@ module Cappie
       @proc.cwd = @working_dir unless @working_dir.nil?
     end
   end
+  
+  class ProcessExitedError < RuntimeError; end
 end
