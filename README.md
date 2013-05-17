@@ -35,8 +35,12 @@ An instant capybara/cucumber/rspec/selenium-webdriver configuration for web apps
         Cappie.start(
           command: './serve/my/app --port 8080',
           await: /listening at 8080/,
-          host: 'http://localhost:8080'
+          host: 'http://localhost:8080',
+          driver: :poltergeist,
+          environment: { variable: 'value' }
         )
+    
+        (driver and environment are optional)
 
 ## Usage
 
@@ -47,7 +51,7 @@ Just add cucumber features and step definitions. Your steps can use use capybara
     When /^I open my app$/ do
       visit '/'
     end
-
-    Then /^I should see my name$/ do
-      page.should have_content("Hello Josh")
+    
+    Then /^I should see something rendered by my app$/ do
+      page.should have_content('Hello from my app')
     end
