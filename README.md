@@ -37,10 +37,11 @@ An instant capybara/cucumber/rspec/selenium-webdriver configuration for web apps
           await: /listening at 8080/,
           host: 'http://localhost:8080',
           driver: :poltergeist,
-          environment: { variable: 'value' }
+          environment: { variable: 'value' },
+          working_dir: '/some/dir'
         )
     
-        (driver and environment are optional)
+        (driver, environment and working_dir are optional)
 
 ## Usage
 
