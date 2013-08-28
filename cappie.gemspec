@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'cucumber', '>= 1.2.1'
   s.add_runtime_dependency 'capybara', '>= 2.0.2'
-  s.add_runtime_dependency 'childprocess', '>= 0.3.8'
+  s.add_runtime_dependency 'procession', '>= 0.0.1'
   s.add_runtime_dependency 'rspec-expectations', '>= 2.0.1'
   s.add_runtime_dependency 'selenium-webdriver', '>= 2.29.0'
   s.add_runtime_dependency 'poltergeist', '>= 1.1.1'
