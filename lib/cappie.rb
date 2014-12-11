@@ -8,6 +8,7 @@ module Cappie
   def self.start(options)
     host = options.delete(:host)
     driver = options.delete(:driver) || :selenium
+    options[:inherit_output] = ENV["CAPPIE_DEBUG"]
     Procession::Process.new(options).start
     Driver.new(driver, host)
   end
