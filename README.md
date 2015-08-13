@@ -56,3 +56,11 @@ Just add cucumber features and step definitions. Your steps can use use capybara
     Then /^I should see something rendered by my app$/ do
       page.should have_content('Hello from my app')
     end
+
+## Debug
+
+You can see debug output when you set the environment variable `CAPPIE_DEBUG=true`:
+
+```sh
+CAPPIE_DEBUG=true cucumber
+```
