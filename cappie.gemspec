@@ -13,14 +13,14 @@ Gem::Specification.new do |s|
 
   s.platform    = Gem::Platform::RUBY
 
-  s.add_runtime_dependency 'cucumber', '>= 2.3'
-  s.add_runtime_dependency 'capybara', '>= 2.7.0'
-  s.add_runtime_dependency 'procession', '>= 0.0.3'
-  s.add_runtime_dependency 'rspec-expectations', '>= 3.4.0'
-  s.add_runtime_dependency 'selenium-webdriver', '>= 2.53.0'
-  s.add_runtime_dependency 'poltergeist', '>= 1.9.0'
+  s.add_runtime_dependency 'cucumber', '~> 2.3'
+  s.add_runtime_dependency 'capybara', '~> 2.7'
+  s.add_runtime_dependency 'procession', '~> 0.0', '>= 0.0.3'
+  s.add_runtime_dependency 'rspec-expectations', '~> 3.4'
+  s.add_runtime_dependency 'selenium-webdriver', '~> 2.53'
+  s.add_runtime_dependency 'poltergeist', '~> 1.9'
 
-  s.add_development_dependency 'rack', '>= 1.5.2'
+  s.add_development_dependency 'rack', '~> 1.6', '>= 1.6.4'
 
   s.rubygems_version = ">= 1.6.1"
   s.files            = `git ls-files`.split("\n").reject {|path| path =~ /\.gitignore$/ }
