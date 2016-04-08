@@ -13,12 +13,12 @@ Gem::Specification.new do |s|
 
   s.platform    = Gem::Platform::RUBY
 
-  s.add_runtime_dependency 'cucumber', '>= 1.3.16'
-  s.add_runtime_dependency 'capybara', '>= 2.4.1'
+  s.add_runtime_dependency 'cucumber', '>= 2.3'
+  s.add_runtime_dependency 'capybara', '>= 2.7.0'
   s.add_runtime_dependency 'procession', '>= 0.0.3'
-  s.add_runtime_dependency 'rspec-expectations', '>= 3.0.4'
-  s.add_runtime_dependency 'selenium-webdriver', '>= 2.29.0'
-  s.add_runtime_dependency 'poltergeist', '>= 1.5.1'
+  s.add_runtime_dependency 'rspec-expectations', '>= 3.4.0'
+  s.add_runtime_dependency 'selenium-webdriver', '>= 2.53.0'
+  s.add_runtime_dependency 'poltergeist', '>= 1.9.0'
 
   s.add_development_dependency 'rack', '>= 1.5.2'
 
