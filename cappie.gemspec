@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.description = 'Instant capybara/cucumber/rspec/selenium-webdriver configuration for any web app'
   s.summary     = "cappie-#{s.version}"
   s.homepage    = "http://github.com/featurist/cappie"
+  s.license     = 'MIT'
 
   s.platform    = Gem::Platform::RUBY
 
